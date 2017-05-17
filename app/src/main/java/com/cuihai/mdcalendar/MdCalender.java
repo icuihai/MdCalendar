@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -92,7 +93,7 @@ public class MdCalender extends LinearLayout {
         LayoutInflater layoutInflater;
 
         public CalendarAdapter(@NonNull Context context, ArrayList<Date> list) {
-            super(context, R.layout.item_calendar);
+            super(context, R.layout.item_calendar,list);
             layoutInflater = LayoutInflater.from(context);
         }
 
