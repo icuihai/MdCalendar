@@ -1,7 +1,6 @@
 package com.cuihai.mdcalendar;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -12,13 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.SimpleFormatter;
 
 /**
  * author:  崔海
@@ -37,6 +34,7 @@ public class MdCalender extends LinearLayout {
 
     public MdCalender(Context context) {
         super(context);
+        init(context);
     }
 
     public MdCalender(Context context, @Nullable AttributeSet attrs) {
@@ -57,7 +55,7 @@ public class MdCalender extends LinearLayout {
     }
 
     private void renderCalender() {
-        SimpleDateFormat sdf = new SimpleDateFormat("MM yy");
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
         tvDate.setText(sdf.format(curDate.getTime()));
         ArrayList<Date> list = new ArrayList<>();
         Calendar calendar = (Calendar) curDate.clone();
